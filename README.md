@@ -22,6 +22,10 @@ java -jar jjf.jar --latest --filter .\*pbouda.\*
 java -jar jjf.jar --latest --filter .\*netty.\*
 ```
 
+- all stacks containing `pbouda` frames
+
 ![pbouda_frames](flame-pbouda-frames.svg)
+
+- all stacks containing `netty` frames
 
 ![netty_frames](flame-netty-frames.svg)
