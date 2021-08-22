@@ -1,12 +1,12 @@
 # netty-native-leak-flamegraph
 
-- 
+- Based on this project:
 - https://github.com/petrbouda/jvm-jemalloc-flamegraph
 
 ```
 mvn package
 
-# 
+# run the HTTP Server with Jemalloc settings 
 MALLOC_CONF=prof_leak:true,lg_prof_sample:0,prof_prefix:/tmp/jeprof,prof_final:true \
 java -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer \
 -XX:+UseSerialGC -jar target/netty-leak.jar
@@ -19,4 +19,9 @@ create-java-perf-map.sh `pgrep -f netty-leak` unfoldall
 
 # filter out all stacks that don't contain frame matching the pattern
 java -jar jjf.jar --latest --filter .\*pbouda.\*
+java -jar jjf.jar --latest --filter .\*netty.\*
 ```
+
+![pbouda_frames](flame-pbouda-frames.svg)
+
+![netty_frames](flame-netty-frames.svg)
