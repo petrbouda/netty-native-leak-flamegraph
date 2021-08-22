@@ -27,5 +27,5 @@ java -jar jjf.jar --latest --filter .\*netty.\*
 ![pbouda_frames](flame-pbouda-frames.svg)
 
 - all stacks containing `netty` frames
-
+- it looks like the allocations happened at the beginning of the program there are no Jitted versions of Intepreter's frames
 ![netty_frames](flame-netty-frames.svg)
